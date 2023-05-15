@@ -1,42 +1,60 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import './Item.scss';
 import { GitIcon } from '../Icons/Icons';
+import { Color } from '../../types/Color';
+import { truncateString } from '../../helpers/truncateString';
 
 type Props = {
   children?: ReactNode,
-  type?: 'plain' | 'complex',
-  image: string
+  title: string,
+  image: string,
+  description: string,
+  gitUrl?: string,
+  demoUrl?: string,
 }
 
 export const Item: React.FC<Props> = ({
   children,
-  type = 'complex',
   image,
+  description,
+  title,
+  gitUrl,
+  demoUrl
 }) => {
+  const [iconColor, setIconColor] = useState(Color.Default)
+
   return (
     <div className='item'>
-      <button
-        style={{ backgroundImage: `url(${image})` }}
-        className="item__button">
-      </button>
+      <img className="item__image" src={image} alt="Logo" />
 
-      {type === 'complex' && (
-        <>
-          <div className="item__info">
-            <h3 className="item__title">MET Museum</h3>
-            <span className="item__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur perferendis, sapiente illo </span>
+      <div className="item__info">
+        <h3 className="item__title">{title}</h3>
 
-            <div className="item__git">
-            <GitIcon />
-            </div>
+        <span className="item__description">
+          {truncateString(description, 86)}
+        </span>
+      </div>
 
-          </div>
+      <div className="item__technology-list">
+        {children}
+      </div>
 
-          <div className="item__stack">
-            {children}
-          </div>
-        </>
-      )}
+      <a
+        target='__blank'
+        className="item__demo-link"
+        href={demoUrl}>
+        DEMO
+      </a>
+
+      <a
+        target='__blank'
+        onMouseEnter={() => setIconColor(Color.Hover)}
+        onMouseLeave={() => setIconColor(Color.Default)}
+        href={gitUrl}
+        className="item__git-link"
+      >
+        <GitIcon color={iconColor} />
+      </a>
     </div>
   )
 }

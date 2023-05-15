@@ -1,0 +1,131 @@
+@import './../../styles/mixins.scss';
+@import './../../styles/variables.scss';
+
+@keyframes sliderShape{
+  0%,100%{
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  34%{
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+  }
+  50%{
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  67%{
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+  }
+}
+
+.about {
+  width: 400px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @include onPhone {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 130px;
+    padding: 0 15px;
+  }
+
+  &__photo {
+    width: 250px;
+    height: 250px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 100%;
+    box-shadow: rgba(71, 71, 244, 0) 0px 0px 0px 2px inset, rgba(255, 255, 255, 0) 10px 10px 0px -3px, $primary -10px -10px, rgba(255, 255, 255, 0) 20px 20px 0px -3px, $secondary -20px -20px, rgba(255, 255, 255, 0) 30px 30px 0px -3px, $tertiary -30px -30px, rgba(255, 255, 255, 0) 40px 40px 0px -3px, $quaternary -40px -40px;
+
+    // @include onPhone {
+    //   margin-bottom: 15px;
+    //   border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+    //   will-change: border-radius, transform, opacity;
+    //   animation: sliderShape 5s linear infinite;
+    //   display: block;
+    //   z-index: -1;
+    //   -webkit-animation: sliderShape 10s linear infinite;
+    // }
+  }
+
+  &__technology-list {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 3px;
+
+    @include onPhone {
+      margin-bottom: 10px;
+      height: auto;
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+      align-items: start;
+    }
+
+    & * {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  &__name {
+    display: block;
+    width: 100%;
+
+    color: $primary;
+    font-size: 60px;
+    font-weight: 900;
+
+    @include onPhone {
+      font-size: 50px;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    font-family: ChakraPetch;
+    font-size: 18px;
+    color: $secondary;
+
+    @include onPhone {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__social-links * {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 2px;
+    border-radius: 4px;
+    transition: all 300ms;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    & * {
+      background-color: $primary;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

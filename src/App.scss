@@ -1,15 +1,16 @@
 @import './styles/mixins.scss';
+@import './styles/variables.scss';
 
 @font-face {
-  font-family: ChrustyRock;
-  src: url(./fonts/ChrustyRock-ORLA.ttf);
+  font-family: Contrast;
+  src: url(./fonts/contrast.ttf);
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
-  font-family: Hardick;
-  src: url(./fonts/Newretrostyle3d-ygjm.ttf);
+  font-family: ChakraPetch;
+  src: url(./fonts/ChakraPetch-Medium.ttf);
   font-style: normal;
   font-weight: 500;
 }
@@ -28,82 +29,77 @@
   font-weight: 300;
 }
 
-@font-face {
-  font-family: Roboto;
-  src: url(./fonts/Roboto-Medium.ttf);
-  font-style: normal;
-  font-weight: 300;
-}
-
 .App {
-  font-family: ChrustyRock, sans-serif;
   margin: 0 auto;
   max-width: 1600px;
   height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  padding: 100px 0;
+  gap: 50px;
+  padding: 100px 50px;
+
+  font-family: Poppins, sans-serif;
 
   @include onPhone {
+    width: 100%;
+    height: auto;
+
     flex-direction: column;
+    gap: 110px;
+    padding: 70px 20px 50px;
   }
 
-  &__header {
-    position: absolute;
-    top: 0;
-    background-color: rgba(55, 172, 215, 0.5);
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+  &__my-projects {
+    position: relative;
 
-    & * {
-      width: 30px;
-      height: 30px;
+    &::after {
+      content: "My projects";
+      position: absolute;
+      top: -100px;
+      left: -20px;
+
+      transform: rotate(-12deg);
+
+      font-family: Contrast, sans-serif;
+      font-size: 60px;
+      color: $tertiary;
+
+      @include onPhone {
+        top: -140px;
+        left: 50%;
+
+        transform:
+        rotate(0deg)
+        translateX(-50%);
+      }
     }
   }
 
+  &__item-list {
+    width: 840px;
+    height: 58vh;
 
-  &__field {
-    width: 500px;
-    height: 60vh;
-    // overflow-y: scroll;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
 
-    /* Для WebKit (Safari, Google Chrome і т.д.) */
+    overflow-y: scroll;
+
+    @include onPhone {
+      height: auto;
+      width: 100%;
+
+      overflow-y: hidden;
+
+      justify-content: center;
+    }
+
     &::-webkit-scrollbar {
-      width: 0.5em;
-      /* ширина скролбару */
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: transparent;
-      /* колір фону трека */
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #888;
-      border-radius: 5px;
-      /* колір скролбару */
-    }
-
-  }
-
-  &__stack {
-    display: flex;
-    justify-content: center;
-
-    & * {
-      width: 50px;
-      height: 50px;
+      display: none;
     }
   }
 }
