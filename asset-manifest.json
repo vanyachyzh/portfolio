@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.21a9e6b0.css",
-    "main.js": "/portfolio/static/js/main.1aeccd54.js",
+    "main.css": "/portfolio/static/css/main.e4541a65.css",
+    "main.js": "/portfolio/static/js/main.c08e8c62.js",
     "static/media/Poppins-Light.ttf": "/portfolio/static/media/Poppins-Light.25b96349cf564e8ba0dc.ttf",
     "static/media/Poppins-Bold.ttf": "/portfolio/static/media/Poppins-Bold.300a4da54f1e6258b6f7.ttf",
     "static/media/met2.png": "/portfolio/static/media/met2.efec83b7434b6eb9708d.png",
@@ -13,14 +13,17 @@
     "static/media/me.jpg": "/portfolio/static/media/me.b14bba20edbdeae7dc93.jpg",
     "static/media/contrast.ttf": "/portfolio/static/media/contrast.5d771dec55ea2d0e7266.ttf",
     "static/media/innjoy.png": "/portfolio/static/media/innjoy.fb630b2ac845e64e8cf8.png",
+    "static/media/logo.svg": "/portfolio/static/media/logo.9efc957908efe1d78a36fb027f7ea92d.svg",
+    "static/media/my-recipes-logo (1).svg": "/portfolio/static/media/my-recipes-logo (1).ccc649b61415615b1bedcc35a3dbf82b.svg",
     "static/media/pot.svg": "/portfolio/static/media/pot.2fe7a1127e44118afdc68ccda9c13f82.svg",
     "static/media/LOGO.svg": "/portfolio/static/media/LOGO.00b0de0bb97c39e9db7f093b9e81043c.svg",
+    "static/media/setting 1.svg": "/portfolio/static/media/setting 1.ea4210a75cee4a178c6b9c1a63d32088.svg",
     "index.html": "/portfolio/index.html",
-    "main.21a9e6b0.css.map": "/portfolio/static/css/main.21a9e6b0.css.map",
-    "main.1aeccd54.js.map": "/portfolio/static/js/main.1aeccd54.js.map"
+    "main.e4541a65.css.map": "/portfolio/static/css/main.e4541a65.css.map",
+    "main.c08e8c62.js.map": "/portfolio/static/js/main.c08e8c62.js.map"
   },
   "entrypoints": [
-    "static/css/main.21a9e6b0.css",
-    "static/js/main.1aeccd54.js"
+    "static/css/main.e4541a65.css",
+    "static/js/main.c08e8c62.js"
   ]
 }
